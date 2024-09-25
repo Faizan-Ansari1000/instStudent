@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="my-div">
+        <style>
+            /* Floating label styles */
+            .floating-label-group {
+                position: relative;
+            }
+
+            .floating-label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: all 0.2s ease-out;
+                pointer-events: none;
+                color: #a0aec0;
+                /* Tailwind's gray-400 */
+                font-size: 1rem;
+                /* Tailwind's text-base */
+            }
+
+            .floating-label-active {
+                top: -1.5rem;
+                left: 0;
+                font-size: 0.75rem;
+                /* Tailwind's text-sm */
+                color: #3182ce;
+                /* Tailwind's blue-600 */
+            }
+
+            .form-input:focus+.floating-label,
+            .form-input:not(:placeholder-shown)+.floating-label {
+                top: -1.5rem;
+                left: 0;
+                font-size: 0.75rem;
+                color: #3182ce;
+            }
+        </style>
+        <div class="my-div">
+
+            <div class="max-w-5xl mx-auto p-4 sm:p-6">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
+                    
+                    <div class="md:w-1/2">
+                        <img src="https://us.123rf.com/450wm/ribah/ribah1602/ribah160200034/54062669-3d-illustration-of-man-sitting-on-word-text-result-3d-rendering-of-human-people-character.jpg"
+                            alt="Student Image" class="w-full h-full object-cover">
+                    </div>
+
+                    <div class="md:w-1/2 p-8">
+                        <h2 class="text-2xl font-bold mb-6">Upload</h2>
+                         <div class="form" id="dataform">
+                            <div class="relative floating-label-group">
+                                <input type="text" id="course" name="course"
+                                    class="form-input block w-full px-4 py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none"
+                                    placeholder=" " required>
+                                <label for="course" class="floating-label">Course</label>
+                            </div> <br>
+                            <div class="relative floating-label-group">
+                                <input type="text" id="studentId" name="studentId"
+                                    class="form-input block w-full px-4 py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none"
+                                    placeholder=" " required>
+                                <label for="studentId" class="floating-label">Student Id</label>
+                            </div><br>
+                            <div class="relative floating-label-group">
+                                <input type="number" id="marks" name="marks"
+                                    class="form-input block w-full px-4 py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none"
+                                    placeholder=" " required>
+                                <label for="marks" class="floating-label">Marks</label>
+                            </div><br>
+                            <div class="relative floating-label-group">
+                                <input type="number" id="totalMarks" name="totalMarks"
+                                    class="form-input block w-full px-4 py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none"
+                                    placeholder=" " required>
+                                <label for="totalMarks" class="floating-label">Total Marks</label>
+                            </div><br>
+                            <div class="relative floating-label-group">
+                                <input type="text" id="grade" name="grade"
+                                    class="form-input block w-full px-4 py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none"
+                                    placeholder=" " required>
+                                <label for="grade" class="floating-label">Grade</label>
+                            </div> <br>
+                            <div class="relative floating-label-group">
+                                <input type="text" id="cnic" name="cnic"
+                                    class="form-input block w-full px-4 py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none"
+                                    placeholder=" " required>
+                                <label for="cnic" class="floating-label">CNIC</label>
+                            </div>
+
+                            <button onclick="push()"
+                                class="button mt-12 flex items-center justify-center text-sm lg:ml-auto max-lg:w-full rounded-lg px-4 py-3 tracking-wide text-white bg-cyan-950 hover:bg-cyan-950">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#fff'
+                                    class="mr-2" viewBox="0 0 548.244 548.244">
+                                    <path fill-rule="evenodd"
+                                        d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
+                                        clip-rule="evenodd" data-original="#000000" />
+                                </svg>
+                                Upload
+                            </button>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div id="cartContainer" class="m-2"></div>
+
+
+
+
+
+    <!-- <div class="container mx-auto p-6">
+        <form id="dataForm" class="mb-6">
+            <input type="text" id="course" placeholder="Course" required class="border p-2 mb-2">
+            <input type="number" id="marks" placeholder="Marks" required class="border p-2 mb-2">
+            <input type="number" id="totalMarks" placeholder="Total Marks" required class="border p-2 mb-2">
+            <input type="text" id="grade" placeholder="Grade" required class="border p-2 mb-2">
+            <input type="text" id="studentId" placeholder="Student ID" required class="border p-2 mb-2">
+            <button type="button" id="addEntry" class="bg-blue-500 text-white px-4 py-2 rounded">Add Entry</button>
+        </form>
+
+        <div id="cartContainer" class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+                <thead>
+                    <tr class="bg-cyan-950 text-white">
+                        <th class="py-3 px-4 text-left font-semibold">Course</th>
+                        <th class="py-3 px-4 text-left font-semibold">Student ID</th>
+                        <th class="py-3 px-4 text-left font-semibold">Marks</th>
+                        <th class="py-3 px-4 text-left font-semibold">Total Marks</th>
+                        <th class="py-3 px-4 text-left font-semibold">Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="cartTableBody"></tbody>
+            </table>
+        </div>
+    </div> -->
+
+        <script type="module" src="/administrationPortal/uploadStudentMarks/uploadStudent.js"></script>
+</body>
+
+</html>

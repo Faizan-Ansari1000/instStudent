@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+  
+  <div class="my-nav">
+    <style>
+      /* Keyframes for sliding in the menu */
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      /* Keyframes for sliding out the menu */
+      @keyframes slideOut {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+
+        to {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      }
+
+      /* Styles for the off-canvas menu */
+      .navbar-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: rgba(0, 0, 0, 0.8); */
+        /* background-color: white; */
+        background: linear-gradient(to right, #4a148c, #52564f);
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 50;
+      }
+
+      /* Show the menu when targeted */
+      .navbar-menu:target {
+        transform: translateX(0);
+        opacity: 1;
+        animation: slideIn 0.3s ease-out;
+      }
+
+      /* Hide the menu when not targeted */
+      .navbar-menu:not(:target) {
+        animation: slideOut 0.3s ease-in;
+      }
+
+      /* Style for the menu items */
+      .navbar-menu a {
+        display: block;
+        padding: 1rem;
+        text-align: start;
+        justify-content: start;
+        color: white;
+        font-size: 1.25rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      /* Hover effect for menu items */
+      .navbar-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+      }
+    </style>
+    <div class="my-new-nav">
+      <!-- Navigation -->
+      <nav class="bg-black text-stone-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+          <!-- Logo Section -->
+          <div class="flex items-center space-x-4">
+            <a href="#" class="text-2xl font-bold">My App</a>
+          </div>
+
+          <!-- Menu for larger screens -->
+          <div class="hidden md:flex space-x-8">
+            <a href="/login SignUp/signUp/signUp.html" class="hover:text-gray-400 transition duration-300">SignUp</a>
+            <a href="/login SignUp/login/login.html" class="hover:text-gray-400 transition duration-300">Login</a>
+          </div>
+
+          <!-- Hamburger Menu for mobile -->
+          <div class="md:hidden flex items-center">
+            <a href="#menu" class="text-gray-200 hover:text-gray-400 focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Off-canvas Menu for mobile -->
+      <div id="menu" class="navbar-menu">
+        <div class="flex justify-end ">
+          <a href="#" class="text-gray-400 hover:text-gray-100 text-2xl">&times;</a>
+        </div>
+        <div class="flex flex-col items-center space-y-4 mt-16">
+          <a href="/login SignUp/signUp/signUp.html" class="hover:bg-gray-700">Sign Up</a>
+          <a href="/login SignUp/login/login.html" class="hover:bg-gray-700">Login</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-section">
+      <!-- hero seciton -->
+      <div class="relative w-full h-[320px]" id="home">
+        <div class="absolute inset-0 opacity-70">
+          <img
+            src="https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?cs=srgb&dl=pexels-jplenio-1103970.jpg&fm=jpg"
+            alt="Background Image" class="object-cover object-center w-full h-full" />
+
+        </div>
+        <div class="absolute inset-9 flex flex-col md:flex-row items-center justify-between">
+          <div class="md:w-1/2 mb-4 md:mb-0">
+            <h1 class="text-grey-700 font-medium text-4xl md:text-5xl leading-tight mb-2">Welcome To Student Portal</h1>
+            <p class="font-regular text-xl mb-8 mt-4">One stop solution for over grinding services</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- about us -->
+      <section class="bg-gray-100" id="aboutus">
+        <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+            <div class="max-w-lg">
+              <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">About Us</h2>
+              <p class="mt-4 text-gray-600 text-lg">
+                Bappa flour mill provides our customers with the highest quality products and services. We offer a
+                wide variety of flours and spices to choose from, and we are always happy to help our customers find
+                the perfect products for their needs.
+                We are committed to providing our customers with the best possible experience. We offer competitive
+                prices, fast shipping, and excellent customer service. We are also happy to answer any questions
+                that our customers may have about our products or services.
+                If you are looking for a flour and spices service business that can provide you with the highest
+                quality products and services, then we are the company for you. We look forward to serving you!</p>
+            </div>
+            <div class="mt-12 md:mt-0">
+              <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86" alt="About Us Image"
+                class="object-cover rounded-lg shadow-md">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- why us  -->
+      <section class="text-gray-700 body-font mt-10">
+        <div class="flex justify-center text-3xl font-bold text-gray-800 text-center">
+          Why Us?
+        </div>
+        <div class="container px-5 py-12 mx-auto">
+          <div class="flex flex-wrap text-center justify-center">
+            <div class="p-4 md:w-1/4 sm:w-1/2">
+              <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+                <div class="flex justify-center">
+                  <img
+                    src="https://image3.jdomni.in/banner/13062021/58/97/7C/E53960D1295621EFCB5B13F335_1623567851299.png?output-format=webp"
+                    class="w-32 mb-3">
+                </div>
+                <h2 class="title-font font-regular text-2xl text-gray-900">Latest Milling Machinery</h2>
+              </div>
+            </div>
+
+            <div class="p-4 md:w-1/4 sm:w-1/2">
+              <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+                <div class="flex justify-center">
+                  <img
+                    src="https://image2.jdomni.in/banner/13062021/3E/57/E8/1D6E23DD7E12571705CAC761E7_1623567977295.png?output-format=webp"
+                    class="w-32 mb-3">
+                </div>
+                <h2 class="title-font font-regular text-2xl text-gray-900">Reasonable Rates</h2>
+              </div>
+            </div>
+
+            <div class="p-4 md:w-1/4 sm:w-1/2">
+              <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+                <div class="flex justify-center">
+                  <img
+                    src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp"
+                    class="w-32 mb-3">
+                </div>
+                <h2 class="title-font font-regular text-2xl text-gray-900">Time Efficiency</h2>
+              </div>
+            </div>
+
+            <div class="p-4 md:w-1/4 sm:w-1/2">
+              <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+                <div class="flex justify-center">
+                  <img
+                    src="https://image3.jdomni.in/banner/13062021/EB/99/EE/8B46027500E987A5142ECC1CE1_1623567959360.png?output-format=webp"
+                    class="w-32 mb-3">
+                </div>
+                <h2 class="title-font font-regular text-2xl text-gray-900">Expertise in Industry</h2>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="footer m-1">
+      <footer class="font-sans tracking-wide bg-black py-10 px-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
+          <div>
+            <h4 class="text-white text-lg font-semibold mb-6">Company</h4>
+            <ul class="space-y-5">
+              <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white text-[15px]">About Us</a></li>
+              <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white text-[15px]">Contact</a></li>
+              <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white text-[15px]">Careers</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white text-lg font-semibold mb-6">Information</h4>
+            <ul class="space-y-5">
+              <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white text-[15px]">Privacy Policy</a>
+              </li>
+              <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white text-[15px]">Terms of Service</a>
+              </li>
+              <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white text-[15px]">Refund Policy</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white text-lg font-semibold mb-6">Help</h4>
+            <ul class="space-y-5">
+              <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white text-[15px]">FAQs</a></li>
+              <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white text-[15px]">Shipping
+                  Information</a></li>
+              <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white text-[15px]">Returns &
+                  Exchanges</a></li>
+            </ul>
+          </div>
+
+          <div class="col-span-full max-w-2xl">
+            <h4 class="text-white text-lg font-semibold mb-6">Newsletter</h4>
+            <p class="text-gray-300 mb-4 text-[15px]">Subscribe to our newsletter to get updates on new products and
+              promotions.
+            </p>
+
+            <form class="mb-4">
+              <div class="flex items-center">
+                <input type="email" placeholder="Enter your email"
+                  class="bg-gray-800 px-4 py-3.5 rounded-l-md w-full text-[15px] text-gray-300 outline-none" />
+                <button type="button"
+                  class="bg-gray-700 text-[15px] text-gray-300 tracking-wide px-4 py-3.5 rounded-r-md">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+
+
+        <div class="px-4 my-4 w-full sm:w-auto xl:w-1/5">
+          <div>
+            <h2 class="inline-block text-white text-2xl pb-4 mb-4 border-b-4 border-blue-600">Connect With Us</h2>
+          </div>
+          <a href="#"
+            class="inline-flex text-white items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path
+                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+              </path>
+            </svg>
+          </a>
+
+          <a href="#"
+            class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400 text-white">
+            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+              </path>
+            </svg>
+          </a>
+        </div>
+
+        <p class='text-gray-300 text-right text-[15px] mt-8'>Complete Application developed by
+          Faizan Ansarii.
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+
+</html>

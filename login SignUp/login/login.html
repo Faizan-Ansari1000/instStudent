@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <style>
+        /* Floating label styles */
+        .floating-label-group {
+            position: relative;
+        }
+
+        .floating-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-out;
+            pointer-events: none;
+            color: #a0aec0;
+            /* Tailwind's gray-400 */
+            font-size: 1rem;
+            /* Tailwind's text-base */
+        }
+
+        .floating-label-active {
+            top: -1.5rem;
+            left: 0;
+            font-size: 0.75rem;
+            /* Tailwind's text-sm */
+            color: #3182ce;
+            /* Tailwind's blue-600 */
+        }
+
+        .form-input:focus+.floating-label,
+        .form-input:not(:placeholder-shown)+.floating-label {
+            top: -1.5rem;
+            left: 0;
+            font-size: 0.75rem;
+            color: #3182ce;
+        }
+    </style>
+
+    <div class="my-div">
+        <div class="w-full max-w-6xl mx-auto flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
+            <!-- Image Section -->
+            <div class="lg:w-1/2 h-64 lg:h-auto">
+                <img src="https://img.freepik.com/free-photo/laptop-with-login-password-form-screen_107791-15851.jpg?w=996&t=st=1726155710~exp=1726156310~hmac=e1dbe45309db308f3fb74f487ecb9561996e31ad2e3e5d6a0ff3efb8d9cd7d75"
+                    alt="Sign Up Image" class="object-cover w-full h-full">
+            </div>
+
+            <!-- Form Section -->
+            <div class="lg:w-1/2 p-8 flex flex-col justify-center">
+                <h2 class="text-2xl font-bold mb-6">Login</h2>
+                <div class="space-y-4">
+                    <div class="relative floating-label-group">
+                        <input type="email" id="email" name="email"
+                            class="form-input block w-full px-4 py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none"
+                            placeholder=" " required>
+                        <label for="email" class="floating-label">Email</label>
+                    </div> <br>
+                    <div class="relative floating-label-group">
+                        <input type="password" id="password" name="password"
+                            class="form-input block w-full px-4 py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none"
+                            placeholder=" " required>
+                        <label for="password" class="floating-label">Password</label>
+                    </div>
+                    <div class="text-end">
+                        <a href="#" class="text-sm text-blue-500 hover:underline">Forget Password?</a>
+                    </div> <br>
+                    <button type="button" onclick="login()"
+                        class="button mt-12 flex items-center justify-center text-md lg:ml-auto max-lg:w-full rounded-lg px-4 py-3 tracking-wide text-white bg-cyan-950 hover:bg-cyan-950">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="/login SignUp/login/login.js"></script>
+</body>
+</html>

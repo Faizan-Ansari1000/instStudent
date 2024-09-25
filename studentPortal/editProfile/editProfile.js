@@ -1,0 +1,46 @@
+ // Import the functions you need from the SDKs you need
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+ import { doc,setDoc,getFirestore } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+ // TODO: Add SDKs for Firebase products that you want to use
+ // https://firebase.google.com/docs/web/setup#available-libraries
+
+ // Your web app's Firebase configuration
+ // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+ const firebaseConfig = {
+   apiKey: "AIzaSyADdEh-IuWSwgZvnarWYCy6Q13GUrM5G1c",
+   authDomain: "student-portal-c81d8.firebaseapp.com",
+   projectId: "student-portal-c81d8",
+   storageBucket: "student-portal-c81d8.appspot.com",
+   messagingSenderId: "268848924458",
+   appId: "1:268848924458:web:9bb78e1a5a08f0424f8053",
+   measurementId: "G-560Y50KZR3"
+ };
+
+ // Initialize Firebase
+ const app = initializeApp(firebaseConfig);
+ const analytics = getAnalytics(app);
+ const db = getFirestore();
+
+ window.edit = () => {
+  
+  let cnic = document.getElementById('cnic')
+  let name = document.getElementById('name')
+  let fatherName = document.getElementById('fatherName')
+
+  let obj = {
+    name: name.value,
+    fatherName: fatherName.value,
+    cnic: cnic.value,
+  }
+  console.log(obj);
+  
+  if(name && fatherName && cnic == db,'student'){
+    console.log(obj);
+  }else{
+    console.error('error')
+  }
+
+ }
+
+ 
